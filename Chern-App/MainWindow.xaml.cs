@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Chern_App.News.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,8 @@ namespace Chern_App
         public MainWindow()
         {
             InitializeComponent();
+            var test = new NewsViewModel();
+            test.GetFeed();
         }
 
         private void ExitButton_Click(object sender, RoutedEventArgs e)
