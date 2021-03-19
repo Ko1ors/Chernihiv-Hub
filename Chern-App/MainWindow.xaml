@@ -22,7 +22,34 @@
     <Window.Resources>
         <SolidColorBrush x:Key="WindowsBrush" Color="#1a508b" />
         <SolidColorBrush x:Key="BackgroundBrush" Color="#f8f1f1" />
-    </Window.Resources>
+        <Style TargetType="Button" x:Key="SideBarButtonStyle">
+                <Setter Property="Width" Value="40"/>
+                <Setter Property="Height" Value="30"/>
+                <Setter Property="Margin" Value="0,10,0,0"/>
+                <Setter Property="Foreground" Value="#E1DCD2"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="FontFamily" Value="Arial"/>
+                <Setter Property="FontSize" Value="25"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Grid>
+                                <Border x:Name="NavButton"/>
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Control.Foreground" Value="LightGray" />
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="Control.Foreground" Value="Gray"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </Window.Resources>
     <Border BorderThickness="0">
         <Border.Style>
             <Style TargetType="{x:Type Border}">
@@ -60,9 +87,28 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="1*"/>
                     </Grid.RowDefinitions>
-                    <StackPanel Width="42" Margin="0,-2,0,-2" Background="{StaticResource WindowsBrush}">
-                        <Button Margin="0,10,0,0" Height="30" Width="42" Content="≡" FontSize="25" FontFamily="Arial" VerticalContentAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" FontStyle="Normal" Foreground="#E1DCD2"/>
-                    </StackPanel>
+                    <Border BorderThickness="0,2,0,0" BorderBrush="#FF17385D">
+                        <Grid Margin="0,0,0,-2" Background="{StaticResource WindowsBrush}">
+                            <Rectangle Name="sideBar" Width="100" VerticalAlignment="Stretch" Fill="{StaticResource WindowsBrush}" Visibility="Collapsed"/>
+                            <StackPanel>
+                                <Button Style="{StaticResource SideBarButtonStyle}" Width="30" Height="30" Margin="0,5,0,5" Content="≡" Click="Button_Click">
+                                    <shell:Button.LayoutTransform>
+                                        <shell:TransformGroup>
+                                            <shell:ScaleTransform/>
+                                            <shell:SkewTransform/>
+                                            <shell:RotateTransform x:Name="sideBarRotateTransform" Angle="0"/>
+                                            <shell:TranslateTransform/>
+                                        </shell:TransformGroup>
+                                    </shell:Button.LayoutTransform>
+                                </Button>
+                                <Rectangle Height="2" Fill="#FF17385D" />
+                                <Button Style="{StaticResource SideBarButtonStyle}"  Content="📰"/>
+                                <Button Style="{StaticResource SideBarButtonStyle}"  Content="₴"/>
+                                <Button Style="{StaticResource SideBarButtonStyle}"  Content="☁"/>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                    <Frame shell:Grid.Column="1" x:Name="PageFrame" Source="DefaultPage.xaml" NavigationUIVisibility="Hidden"/>
                 </Grid>
             </Border>
         </Grid>

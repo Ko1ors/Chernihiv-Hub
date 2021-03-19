@@ -34,5 +34,19 @@ namespace Chern_App
         {
             WindowState = WindowState.Minimized;
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (sideBar.Visibility == Visibility.Collapsed)
+            {
+                sideBar.Visibility = Visibility.Visible;
+                sideBarRotateTransform.Angle = 90;
+            }
+            else
+            {
+                sideBar.Visibility = Visibility.Collapsed;
+                sideBarRotateTransform.Angle = 0;
+            }
+        }
     }
 }
