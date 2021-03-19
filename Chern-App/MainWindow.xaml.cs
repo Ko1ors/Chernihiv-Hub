@@ -41,11 +41,13 @@ namespace Chern_App
             {
                 sideBar.Visibility = Visibility.Visible;
                 sideBarRotateTransform.Angle = 90;
+                SideBarElement.UseFullName = true;
             }
             else
             {
                 sideBar.Visibility = Visibility.Collapsed;
                 sideBarRotateTransform.Angle = 0;
+                SideBarElement.UseFullName = false;
             }
         }
     }

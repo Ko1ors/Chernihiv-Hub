@@ -22,14 +22,14 @@
     <Window.Resources>
         <SolidColorBrush x:Key="WindowsBrush" Color="#1a508b" />
         <SolidColorBrush x:Key="BackgroundBrush" Color="#f8f1f1" />
+        
         <Style TargetType="Button" x:Key="SideBarButtonStyle">
-                <Setter Property="Width" Value="40"/>
-                <Setter Property="Height" Value="30"/>
-                <Setter Property="Margin" Value="0,10,0,0"/>
+            <Setter Property="MinWidth" Value="40"/>
+            <Setter Property="Margin" Value="0,10,0,0"/>
                 <Setter Property="Foreground" Value="#E1DCD2"/>
                 <Setter Property="FontWeight" Value="Bold"/>
                 <Setter Property="FontFamily" Value="Arial"/>
-                <Setter Property="FontSize" Value="25"/>
+                <Setter Property="FontSize" Value="20"/>
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type Button}">
@@ -41,15 +41,20 @@
                                 <Trigger Property="IsMouseOver" Value="True">
                                     <Setter Property="Control.Foreground" Value="LightGray" />
                                 </Trigger>
-                                <Trigger Property="IsPressed" Value="True">
-                                    <Setter Property="Control.Foreground" Value="Gray"/>
-                                </Trigger>
-                            </ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Control.Foreground" Value="Gray"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
                         </ControlTemplate>
                     </Setter.Value>
                 </Setter>
             </Style>
-        </Window.Resources>
+
+        <local:SideBarElement x:Key="newsElement" ShortName="📰" FullName="📰 NEWS "/>
+        <local:SideBarElement x:Key="pricesElement" ShortName="₴" FullName="₴ PRICES "/>
+        <local:SideBarElement x:Key="weatherElement" ShortName="☁" FullName="☁ WEATHER "/>
+
+    </Window.Resources>
     <Border BorderThickness="0">
         <Border.Style>
             <Style TargetType="{x:Type Border}">
@@ -102,9 +107,9 @@
                                     </shell:Button.LayoutTransform>
                                 </Button>
                                 <Rectangle Height="2" Fill="#FF17385D" />
-                                <Button Style="{StaticResource SideBarButtonStyle}"  Content="📰"/>
-                                <Button Style="{StaticResource SideBarButtonStyle}"  Content="₴"/>
-                                <Button Style="{StaticResource SideBarButtonStyle}"  Content="☁"/>
+                                <Button Style="{StaticResource SideBarButtonStyle}" DataContext="{StaticResource newsElement}" Content="{Binding CurrentName}"/>
+                                <Button Style="{StaticResource SideBarButtonStyle}" DataContext="{StaticResource pricesElement}" Content="{Binding CurrentName}"/>
+                                <Button Style="{StaticResource SideBarButtonStyle}" DataContext="{StaticResource weatherElement}" Content="{Binding CurrentName}"/>
                             </StackPanel>
                         </Grid>
                     </Border>
