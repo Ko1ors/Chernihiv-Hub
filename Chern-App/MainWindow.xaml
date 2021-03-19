@@ -103,7 +103,7 @@
                                 </Button>
                                 <Rectangle Height="2" Fill="#FF17385D" />
                                 <Button Style="{StaticResource SideBarButtonStyle}"  Content="📰"/>
-                                <Button Style="{StaticResource SideBarButtonStyle}"  Content="₴"/>
+                                <Button Style="{StaticResource SideBarButtonStyle}"  Content="₴" Click="ButtonProductPrice_Click"/>
                                 <Button Style="{StaticResource SideBarButtonStyle}"  Content="☁"/>
                             </StackPanel>
                         </Grid>

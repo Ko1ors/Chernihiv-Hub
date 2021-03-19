@@ -48,5 +48,10 @@ namespace Chern_App
                 sideBarRotateTransform.Angle = 0;
             }
         }
+
+        private void ButtonProductPrice_Click(object sender, RoutedEventArgs e)
+        {
+            PageFrame.Source = new Uri("Page1.xaml", UriKind.Relative);
+        }
     }
 }
