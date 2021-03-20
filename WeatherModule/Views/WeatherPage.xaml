@@ -18,11 +18,37 @@
             <RowDefinition Height="20*"/>
             <RowDefinition Height="30*"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="ПОГОДА У ЧЕРНІГОВІ" FontFamily="Arial Black" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#344048"/>
-        <Border Grid.Row="1" Padding="5" BorderThickness="1" Margin="5" Width="200" Background="#344048" CornerRadius="15" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="15*"/>
+            <ColumnDefinition Width="10*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="ПОГОДА У ЧЕРНІГОВІ" Grid.ColumnSpan="3" FontFamily="Arial Black" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#344048"/>
+        <Border Grid.Row="1" Grid.Column="1" Padding="5" BorderThickness="1" Margin="5" Background="#344048" CornerRadius="15" >
             <Grid>
-                <Image Source="{Binding Icon, Converter={StaticResource converter}, FallbackValue=https://openweathermap.org/img/wn/01d@4x.png}" />
-                <TextBlock Text="{Binding Temp, StringFormat={}{0}°C, FallbackValue=10°C}" FontSize="15" FontFamily="Arial Black" VerticalAlignment="Top" HorizontalAlignment="Right" Foreground="White"/>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Image Source="{Binding Icon, Converter={StaticResource converter}, FallbackValue=https://openweathermap.org/img/wn/01d@4x.png}"/>
+
+                <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                    <TextBlock Text="{Binding Temp, StringFormat={}{0}°C, FallbackValue=10°C}" Margin="0,0,0,5" FontSize="15" FontFamily="Arial Black" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="White"/>
+                    <TextBlock  FontSize="12" FontFamily="Arial Black" VerticalAlignment="Top" Margin="0,0,0,5" HorizontalAlignment="Left" Foreground="White">
+                        <Run Text="Відчувається як:"/>
+                        <Run Text="{Binding FeelsLike, StringFormat={}{0}°C, FallbackValue=7°C}"/>
+                    </TextBlock>
+                    <TextBlock  FontSize="12" FontFamily="Arial Black" Margin="0,0,0,5" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="White">
+                        <Run Text="Вологість:"/>
+                        <Run Text="{Binding Humidity, StringFormat={}{0}%, FallbackValue=35%}"/>
+                    </TextBlock>
+                    <TextBlock  FontSize="12" FontFamily="Arial Black" Margin="0,0,0,5" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="White">
+                        <Run Text="Вітер:"/>
+                        <Run Text="{Binding WindSpeed, StringFormat={}{0} км/год, FallbackValue=10 км/год}"/>
+                    </TextBlock>
+                </StackPanel>
+                
+                <TextBlock Text="{Binding Description, FallbackValue=Clear}" Typography.Capitals="AllSmallCaps" FontSize="15" FontFamily="Arial Black" VerticalAlignment="Bottom" HorizontalAlignment="Center" Foreground="White"/>
             </Grid>
         </Border>
     </Grid>

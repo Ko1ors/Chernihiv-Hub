@@ -46,7 +46,9 @@ namespace Chern_App
                 }
 
                 var weatherResponse = JsonConvert.DeserializeObject<WeatherResponse>(response);
-                return new WeatherModel() { Icon = weatherResponse.Weather[0].Icon, Temp = weatherResponse.Main.Temp};
+                return new WeatherModel() { Icon = weatherResponse.Weather[0].Icon, Temp = weatherResponse.Main.Temp,
+                    Description = weatherResponse.Weather[0]?.Description, FeelsLike = weatherResponse.Main.FeelsLike,
+                    Humidity = weatherResponse.Main.Humidity, WindSpeed = weatherResponse.Wind.Speed};
             }
             catch(Exception e)
             {

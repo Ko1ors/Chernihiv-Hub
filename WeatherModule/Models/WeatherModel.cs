@@ -8,6 +8,7 @@ namespace WeatherModule.Models
     public class WeatherModel : INotifyPropertyChanged
     {
         private string icon;
+
         public string Icon
         {
             get
@@ -25,6 +26,7 @@ namespace WeatherModule.Models
         }
 
         private double temp;
+
         public double Temp
         {
             get
@@ -37,6 +39,78 @@ namespace WeatherModule.Models
                 {
                     temp = value;
                     OnPropertyChanged("Temp");
+                }
+            }
+        }
+
+        private string description;
+
+        public string Description
+        {
+            get
+            {
+                return description;
+            }
+            set
+            {
+                if (value != description)
+                {
+                    description = value;
+                    OnPropertyChanged("Description");
+                }
+            }
+        }
+
+        private double feelsLike;
+
+        public double FeelsLike
+        {
+            get
+            {
+                return feelsLike;
+            }
+            set
+            {
+                if (value != feelsLike)
+                {
+                    feelsLike = value;
+                    OnPropertyChanged("FeelsLike");
+                }
+            }
+        }
+
+        private int humidity;
+
+        public int Humidity
+        {
+            get
+            {
+                return humidity;
+            }
+            set
+            {
+                if (value != humidity)
+                {
+                    humidity = value;
+                    OnPropertyChanged("Humidity");
+                }
+            }
+        }
+
+        private double windSpeed;
+
+        public double WindSpeed
+        {
+            get
+            {
+                return windSpeed;
+            }
+            set
+            {
+                if (value != windSpeed)
+                {
+                    windSpeed = value;
+                    OnPropertyChanged("WindSpeed");
                 }
             }
         }
