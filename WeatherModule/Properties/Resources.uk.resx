@@ -129,6 +129,9 @@
   <data name="Speed" xml:space="preserve">
     <value>км/год</value>
   </data>
+  <data name="WeatherSideBarName" xml:space="preserve">
+    <value>☁ ПОГОДА </value>
+  </data>
   <data name="Wind" xml:space="preserve">
     <value>Вітер:</value>
   </data>

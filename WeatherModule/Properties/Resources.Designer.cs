@@ -97,6 +97,15 @@ namespace WeatherModule.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на ☁ WEATHER .
+        /// </summary>
+        public static string WeatherSideBarName {
+            get {
+                return ResourceManager.GetString("WeatherSideBarName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Wind:.
         /// </summary>
         public static string Wind {
