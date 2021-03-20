@@ -31,6 +31,11 @@ namespace WeatherModule.Views
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             DataContext = WeatherViewModel.GetWeather();
+            listView.Items.Clear();
+            foreach(var weather in WeatherViewModel.GetWeekWeather())
+            {
+                listView.Items.Add(new WeatherDayUC(weather));
+            }
         }
     }
 }

@@ -51,5 +51,27 @@
                 <TextBlock Text="{Binding Description, FallbackValue=Clear}" Typography.Capitals="AllSmallCaps" FontSize="15" FontFamily="Arial Black" VerticalAlignment="Bottom" HorizontalAlignment="Center" Foreground="White"/>
             </Grid>
         </Border>
+
+        <ListView x:Name="listView" Grid.Row="2" Grid.ColumnSpan="3" Margin="10" BorderBrush="{x:Null}" Background="{x:Null}" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                <Border x:Name="RootBorder" Padding="10">
+                                    <ContentPresenter/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ListView.ItemContainerStyle>
+        </ListView>
+
     </Grid>
 </Page>

@@ -43,6 +43,24 @@ namespace WeatherModule.Models
             }
         }
 
+        private double nightTemp;
+
+        public double NightTemp
+        {
+            get
+            {
+                return nightTemp;
+            }
+            set
+            {
+                if (value != nightTemp)
+                {
+                    nightTemp = value;
+                    OnPropertyChanged("NightTemp");
+                }
+            }
+        }
+
         private string description;
 
         public string Description
@@ -111,6 +129,24 @@ namespace WeatherModule.Models
                 {
                     windSpeed = value;
                     OnPropertyChanged("WindSpeed");
+                }
+            }
+        }
+
+        private DayOfWeek dayOfWeek;
+
+        public DayOfWeek DayOfWeek
+        {
+            get
+            {
+                return dayOfWeek;
+            }
+            set
+            {
+                if (value != dayOfWeek)
+                {
+                    dayOfWeek = value;
+                    OnPropertyChanged("DayOfWeek");
                 }
             }
         }
