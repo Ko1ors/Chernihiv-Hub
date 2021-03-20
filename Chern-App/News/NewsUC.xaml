@@ -22,7 +22,7 @@
                 <DockPanel Margin="0,5,0,0">
                     <TextBlock Margin="0,0,5,0">
                         <Hyperlink NavigateUri="{Binding Path=newsModel.Link, ElementName=uc}" FontFamily="Arial Black" FontSize="11">
-                            <!--<TextBlock Text="{x:Static res:Resources.NewsSource}"/>-->
+                            <TextBlock Text="{x:Static res:Resources.NewsSource}"/>
                         </Hyperlink>
                     </TextBlock>
                     <TextBlock HorizontalAlignment="Right" Text="{Binding Path=newsModel.Date, ElementName=uc, FallbackValue=01.01.2021}" TextWrapping="Wrap" FontFamily="Arial Black" FontSize="11"/>
