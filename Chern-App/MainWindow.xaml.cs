@@ -36,6 +36,7 @@ namespace Chern_App
 
         private void ModuleManager_AddButtonRequested(Button button)
         {
+            button.Style = FindResource("SideBarButtonStyle") as Style;
             sideBarPanel.Children.Add(button);
         }
 
