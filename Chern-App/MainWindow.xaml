@@ -94,8 +94,8 @@
                     <Border BorderThickness="0,2,0,0" BorderBrush="#FF17385D">
                         <Grid Margin="0,0,0,-2" Background="{StaticResource WindowsBrush}">
                             <Rectangle Name="sideBar" Width="100" VerticalAlignment="Stretch" Fill="{StaticResource WindowsBrush}" Visibility="Collapsed"/>
-                            <StackPanel>
-                                <Button Style="{StaticResource SideBarButtonStyle}" Width="30" Height="30" Margin="0,5,0,5" Content="≡" Click="Button_Click">
+                            <DockPanel>
+                                <Button DockPanel.Dock="Top" Style="{StaticResource SideBarButtonStyle}" Width="30" Height="30" Margin="0,5,0,5" Content="≡" Click="Button_Click">
                                     <shell:Button.LayoutTransform>
                                         <shell:TransformGroup>
                                             <shell:ScaleTransform/>
@@ -105,12 +105,15 @@
                                         </shell:TransformGroup>
                                     </shell:Button.LayoutTransform>
                                 </Button>
-                                <Rectangle Height="2" Fill="#FF17385D" />
-                                <StackPanel x:Name="sideBarPanel">
-                                    <Button Style="{StaticResource SideBarButtonStyle}" DataContext="{StaticResource newsElement}" Content="{Binding CurrentName}" Click="Button_Click_1"/>
-                                    <Button Style="{StaticResource SideBarButtonStyle}" DataContext="{StaticResource pricesElement}" Content="{Binding CurrentName}"/>
-                                </StackPanel>
-                            </StackPanel>
+
+                                <Rectangle DockPanel.Dock="Top" Height="2" Fill="#FF17385D" />
+                                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                                    <DockPanel LastChildFill="False">
+                                        <Button DockPanel.Dock="Top" Style="{StaticResource SideBarButtonStyle}" DataContext="{StaticResource newsElement}" Content="{Binding CurrentName}" Click="Button_Click_1"/>
+                                        <Button DockPanel.Dock="Top" Style="{StaticResource SideBarButtonStyle}" DataContext="{StaticResource pricesElement}" Content="{Binding CurrentName}"/>
+                                    </DockPanel>
+                                </ScrollViewer>
+                            </DockPanel>
                         </Grid>
                     </Border>
                     <Frame shell:Grid.Column="1" x:Name="PageFrame" Source="DefaultPage.xaml" NavigationUIVisibility="Hidden"/>
