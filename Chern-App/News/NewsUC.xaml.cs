@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Chern_App.News.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -18,9 +19,12 @@ namespace Chern_App.News
     /// </summary>
     public partial class NewsUC : UserControl
     {
-        public NewsUC()
+
+        public rssChannelItem item;
+        public NewsUC(rssChannelItem item)
         {
             InitializeComponent();
+            this.item = item;
         }
     }
 }

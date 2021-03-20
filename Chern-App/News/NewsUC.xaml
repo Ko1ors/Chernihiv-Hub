@@ -4,11 +4,24 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Chern_App.News"
-             mc:Ignorable="d" 
-             d:DesignHeight="150" d:DesignWidth="400">
+             mc:Ignorable="d"
+             x:Name="uc"
+             d:DesignHeight="120" d:DesignWidth="300">
     <Grid>
-        <Border BorderBrush="Black" BorderThickness="1" CornerRadius="15">
-            
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Border BorderBrush="Black" BorderThickness="1" Padding="10" CornerRadius="15">
+            <StackPanel>
+                <TextBlock Text="{Binding Path=item.title, ElementName=uc, FallbackValue=Title}" FontFamily="Arial Black" FontSize="15"/>
+                <TextBlock Text="{Binding Path=item.description, ElementName=uc, FallbackValue=Description}" Margin="0,5,0,0" TextWrapping="Wrap" MaxHeight="55" FontFamily="Arial Black" FontSize="12"/>
+                <DockPanel Margin="0,5,0,0">
+                    <TextBlock>
+                        <Hyperlink NavigateUri="{Binding Path=item.link, ElementName=uc}" FontFamily="Arial Black" FontSize="12">Ресурс</Hyperlink>
+                    </TextBlock>
+                    <TextBlock HorizontalAlignment="Right" Text="{Binding Path=item.pubDate, ElementName=uc, FallbackValue=01.01.2021}" TextWrapping="Wrap" FontFamily="Arial Black" FontSize="12"/>
+                </DockPanel>
+            </StackPanel>
         </Border>
     </Grid>
 </UserControl>
