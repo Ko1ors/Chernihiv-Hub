@@ -118,18 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ChernihivWeather" xml:space="preserve">
-    <value>WEATHER IN CHERNIHIV</value>
+    <value>ПОГОДА У ЧЕРНІГОВІ</value>
   </data>
   <data name="FeelsLike" xml:space="preserve">
-    <value>Feels like:</value>
+    <value>Відчувається як:</value>
   </data>
   <data name="Humidity" xml:space="preserve">
-    <value>Humidity:</value>
+    <value>Вологість:</value>
   </data>
   <data name="Speed" xml:space="preserve">
-    <value>km/h</value>
+    <value>км/год</value>
   </data>
   <data name="Wind" xml:space="preserve">
-    <value>Wind:</value>
+    <value>Вітер:</value>
   </data>
 </root>

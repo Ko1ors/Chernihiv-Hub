@@ -12,7 +12,7 @@ namespace WeatherModule.Views
         {
             if (!(value is DayOfWeek))
                 return null;
-            return culture.DateTimeFormat.GetDayName((DayOfWeek)value);
+            return System.Threading.Thread.CurrentThread.CurrentUICulture.DateTimeFormat.GetDayName((DayOfWeek)value);
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
