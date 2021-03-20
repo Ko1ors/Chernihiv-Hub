@@ -1,20 +1,8 @@
 ﻿using Chern_App.News;
-using Chern_App.News.ViewModels;
-using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Chern_App
 {
@@ -23,11 +11,21 @@ namespace Chern_App
     /// </summary>
     public partial class MainWindow : Window
     {
+        private readonly string localizationPath = "localization";
         public MainWindow()
         {
+            InitLocalization();
             InitializeComponent();
             ModuleManager.AddButtonRequested += ModuleManager_AddButtonRequested;
             ModuleManager.ShowPageRequested += ModuleManager_ShowPageRequested;
+        }
+
+        private void InitLocalization()
+        {
+            if (File.Exists(localizationPath) && new FileInfo(localizationPath).Length > 0)
+            {
+                System.Threading.Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo(File.ReadAllText(localizationPath));
+            }
         }
 
         private void ModuleManager_ShowPageRequested(Page page)

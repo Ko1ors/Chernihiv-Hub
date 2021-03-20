@@ -32,16 +32,6 @@ namespace Chern_App
         {
             return new DirectoryModuleCatalog() { ModulePath = @".\Modules" };
         }
-
-        private readonly string localizationPath = "localization";
-        
-        protected override void OnStartup(StartupEventArgs e)
-        {
-            base.OnStartup(e);
-            if (File.Exists(localizationPath) && new FileInfo(localizationPath).Length > 0)
-            {
-                System.Threading.Thread.CurrentThread.CurrentUICulture = System.Globalization.CultureInfo.GetCultureInfo(File.ReadAllText(localizationPath));
-            }
-        }
+       
     }
 }
