@@ -2,6 +2,7 @@
 using Chern_App.News.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,7 +25,7 @@ namespace Chern_App
     {
         public MainWindow()
         {
-            InitializeComponent();
+            InitializeComponent();          
         }
 
         private void ExitButton_Click(object sender, RoutedEventArgs e)
