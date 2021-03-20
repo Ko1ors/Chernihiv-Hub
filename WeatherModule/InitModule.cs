@@ -11,21 +11,29 @@ namespace WeatherModule
 {
     public class InitModule : IModule
     {
-        private WeatherPage weatherPage = new WeatherPage();
+        private WeatherPage weatherPage;
+
         private SideBarElement weatherElement;
+
+        private WeatherViewModel weather = new WeatherViewModel();
 
         public void OnInitialized(IContainerProvider containerProvider)
         {
-            var btn = new Button();
-            btn.Click += Btn_Click;
-            btn.SetBinding(Button.ContentProperty, new Binding("CurrentName"));
+            if (weather.GetApiKey())
+            {
+                var btn = new Button();
+                btn.Click += Btn_Click;
+                btn.SetBinding(Button.ContentProperty, new Binding("CurrentName"));
 
-            weatherElement = new SideBarElement();
-            weatherElement.FullName = "☁ WEATHER ";
-            weatherElement.ShortName = "☁";
-            btn.DataContext = weatherElement;
+                weatherElement = new SideBarElement();
+                weatherElement.FullName = "☁ WEATHER ";
+                weatherElement.ShortName = "☁";
+                btn.DataContext = weatherElement;
 
-            Chern_App.ModuleManager.AddButtonRequest(btn);
+                weatherPage = new WeatherPage();
+
+                Chern_App.ModuleManager.AddButtonRequest(btn);
+            }
         }
 
         private void Btn_Click(object sender, System.Windows.RoutedEventArgs e)
