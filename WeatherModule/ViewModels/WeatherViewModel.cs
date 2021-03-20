@@ -5,10 +5,11 @@ using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Text;
+using WeatherModule.Models;
 
 namespace Chern_App
 {
-    class WeatherViewModel
+    public class WeatherViewModel
     {
         private readonly string apiPath = "api.env";
         private readonly string weatherUrl = "http://api.openweathermap.org/data/2.5/weather?q=Chernihiv&units=metric&appid=";
@@ -25,9 +26,9 @@ namespace Chern_App
             return false;
         }
 
-        public WeatherResponse GetWeather()
+        public WeatherModel GetWeather()
         {
-            if (!string.IsNullOrEmpty(apiKey))
+            if (string.IsNullOrEmpty(apiKey))
                 return null;
             try
             {
@@ -44,7 +45,8 @@ namespace Chern_App
                     response = streamReader.ReadToEnd();
                 }
 
-                return JsonConvert.DeserializeObject<WeatherResponse>(response);
+                var weatherResponse = JsonConvert.DeserializeObject<WeatherResponse>(response);
+                return new WeatherModel() { Icon = weatherResponse.Weather[0].Icon, Temp = weatherResponse.Main.Temp};
             }
             catch(Exception e)
             {

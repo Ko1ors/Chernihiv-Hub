@@ -6,11 +6,20 @@
       xmlns:local="clr-namespace:WeatherModule.Views"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
+      Loaded="Page_Loaded"
+      x:Name="page"
       Title="WeatherPage">
-
-    <Grid>
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-            <TextBlock Text="WEATHER PLACEHOLDER" FontSize="25" FontFamily="Arial Black"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        </StackPanel>
+    <Page.Resources>
+        <local:WeatherIconConverter x:Key="converter"/>
+    </Page.Resources>
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="30*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="ПОГОДА У ЧЕРНІГОВІ" FontFamily="Arial Black" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#344048"/>
+        <Image Grid.Row="1" Source="{Binding Icon, Converter={StaticResource converter}, FallbackValue=https://openweathermap.org/img/wn/01d@4x.png}"/>
+        <TextBlock Grid.Row="2" Text="{Binding Temp, FallbackValue=Temp 10}" FontSize="15" FontFamily="Arial Black" VerticalAlignment="Top" HorizontalAlignment="Center"/>
     </Grid>
 </Page>

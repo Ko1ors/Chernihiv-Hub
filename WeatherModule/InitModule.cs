@@ -30,7 +30,7 @@ namespace WeatherModule
                 weatherElement.ShortName = "☁";
                 btn.DataContext = weatherElement;
 
-                weatherPage = new WeatherPage();
+                weatherPage = new WeatherPage(weather);
 
                 Chern_App.ModuleManager.AddButtonRequest(btn);
             }
