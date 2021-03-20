@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Chern_App.News;
+using Chern_App.News.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -41,12 +43,19 @@ namespace Chern_App
             {
                 sideBar.Visibility = Visibility.Visible;
                 sideBarRotateTransform.Angle = 90;
+                SideBarElement.UseFullName = true;
             }
             else
             {
                 sideBar.Visibility = Visibility.Collapsed;
                 sideBarRotateTransform.Angle = 0;
+                SideBarElement.UseFullName = false;
             }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            PageFrame.Content = PageController.GetPageObject<NewsPage>();
         }
     }
 }
