@@ -1,19 +1,7 @@
 ﻿using Chern_App.News;
-using Chern_App.News.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Media;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Chern_App
 {
@@ -22,9 +10,15 @@ namespace Chern_App
     /// </summary>
     public partial class MainWindow : Window
     {
+        SoundPlayer player;
+        SoundPlayer player2;
+        SoundPlayer player3;
         public MainWindow()
         {
             InitializeComponent();
+            player = new SoundPlayer(Properties.Resources.sound);
+            player2 = new SoundPlayer(Properties.Resources.sound2);
+            player3 = new SoundPlayer(Properties.Resources.sound3);
         }
 
         private void ExitButton_Click(object sender, RoutedEventArgs e)
@@ -44,18 +38,25 @@ namespace Chern_App
                 sideBar.Visibility = Visibility.Visible;
                 sideBarRotateTransform.Angle = 90;
                 SideBarElement.UseFullName = true;
+                player2.Play();
             }
             else
             {
                 sideBar.Visibility = Visibility.Collapsed;
                 sideBarRotateTransform.Angle = 0;
                 SideBarElement.UseFullName = false;
+                player3.Play();
             }
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             PageFrame.Content = PageController.GetPageObject<NewsPage>();
+        }
+
+        private void Button_MouseEnter(object sender, MouseEventArgs e)
+        {
+            player.Play();
         }
     }
 }

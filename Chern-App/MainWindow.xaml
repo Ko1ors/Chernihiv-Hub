@@ -109,9 +109,9 @@
                                 <Rectangle DockPanel.Dock="Top" Height="2" Fill="#FF17385D" />
                                 <ScrollViewer VerticalScrollBarVisibility="Auto">
                                     <DockPanel LastChildFill="False">
-                                        <Button DockPanel.Dock="Top" Style="{StaticResource SideBarButtonStyle}" DataContext="{StaticResource newsElement}" Content="{Binding CurrentName}" Click="Button_Click_1"/>
-                                        <Button DockPanel.Dock="Top" Style="{StaticResource SideBarButtonStyle}" DataContext="{StaticResource pricesElement}" Content="{Binding CurrentName}"/>
-                                        <Button DockPanel.Dock="Top" Style="{StaticResource SideBarButtonStyle}" DataContext="{StaticResource weatherElement}" Content="{Binding CurrentName}"/>
+                                        <Button DockPanel.Dock="Top" Style="{StaticResource SideBarButtonStyle}" DataContext="{StaticResource newsElement}" Content="{Binding CurrentName}" Click="Button_Click_1" Mouse.MouseEnter="Button_MouseEnter"/>
+                                        <Button DockPanel.Dock="Top" Style="{StaticResource SideBarButtonStyle}" DataContext="{StaticResource pricesElement}" Content="{Binding CurrentName}" Mouse.MouseEnter="Button_MouseEnter"/>
+                                        <Button DockPanel.Dock="Top" Style="{StaticResource SideBarButtonStyle}" DataContext="{StaticResource weatherElement}" Content="{Binding CurrentName}" Mouse.MouseEnter="Button_MouseEnter"/>
                                     </DockPanel>
                                 </ScrollViewer>
                             </DockPanel>
