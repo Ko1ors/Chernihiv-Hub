@@ -30,7 +30,8 @@ namespace Chern_App.News
             newsViewModel = new NewsViewModel();
             if (newsViewModel.GetFeed())
             {
-                foreach(var item in newsViewModel.rss.channel.item)
+                listView.Items.Clear();
+                foreach (var item in newsViewModel.rss.channel.item)
                 {
                     listView.Items.Add(new NewsUC(item));
                 }

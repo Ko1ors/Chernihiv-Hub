@@ -9,17 +9,20 @@
              d:DesignHeight="120" d:DesignWidth="300">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" MaxWidth="300"/>
+        </Grid.ColumnDefinitions>
         <Border BorderBrush="Black" BorderThickness="1" Padding="10" CornerRadius="15">
             <StackPanel>
-                <TextBlock Text="{Binding Path=item.title, ElementName=uc, FallbackValue=Title}" FontFamily="Arial Black" FontSize="15"/>
-                <TextBlock Text="{Binding Path=item.description, ElementName=uc, FallbackValue=Description}" Margin="0,5,0,0" TextWrapping="Wrap" MaxHeight="55" FontFamily="Arial Black" FontSize="12"/>
+                <TextBlock MaxWidth="250" x:Name="test" Text="{Binding Path=newsModel.Title, ElementName=uc, FallbackValue=Title}" TextWrapping="Wrap" TextTrimming="CharacterEllipsis" MaxHeight="30" FontFamily="Arial Black" FontSize="12"/>
+                <TextBlock MaxWidth="250"  Text="{Binding Path=newsModel.Description, ElementName=uc, FallbackValue=Description}" Margin="0,5,0,0" TextTrimming="CharacterEllipsis" TextWrapping="Wrap" MaxHeight="80" FontFamily="Arial Black" FontSize="11"/>
                 <DockPanel Margin="0,5,0,0">
-                    <TextBlock>
-                        <Hyperlink NavigateUri="{Binding Path=item.link, ElementName=uc}" FontFamily="Arial Black" FontSize="12">Ресурс</Hyperlink>
+                    <TextBlock Margin="0,0,5,0">
+                        <Hyperlink NavigateUri="{Binding Path=newsModel.Link, ElementName=uc}" FontFamily="Arial Black" FontSize="11">Ресурс</Hyperlink>
                     </TextBlock>
-                    <TextBlock HorizontalAlignment="Right" Text="{Binding Path=item.pubDate, ElementName=uc, FallbackValue=01.01.2021}" TextWrapping="Wrap" FontFamily="Arial Black" FontSize="12"/>
+                    <TextBlock HorizontalAlignment="Right" Text="{Binding Path=newsModel.Date, ElementName=uc, FallbackValue=01.01.2021}" TextWrapping="Wrap" FontFamily="Arial Black" FontSize="11"/>
                 </DockPanel>
             </StackPanel>
         </Border>

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -19,12 +20,16 @@ namespace Chern_App.News
     /// </summary>
     public partial class NewsUC : UserControl
     {
+        public NewsModel newsModel { get; set; }
 
-        public rssChannelItem item;
         public NewsUC(rssChannelItem item)
         {
+            newsModel = new NewsModel();
+            newsModel.Title = item.title;
+            newsModel.Description = Regex.Replace(item.description, "<.*?>", String.Empty);
+            newsModel.Link = item.link;
+            newsModel.Date = item.pubDate.Remove(item.pubDate.LastIndexOf('+'));
             InitializeComponent();
-            this.item = item;
         }
     }
 }

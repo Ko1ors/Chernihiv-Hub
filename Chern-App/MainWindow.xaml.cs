@@ -1,4 +1,5 @@
-﻿using Chern_App.News.ViewModels;
+﻿using Chern_App.News;
+using Chern_App.News.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,8 +25,6 @@ namespace Chern_App
         public MainWindow()
         {
             InitializeComponent();
-            var test = new NewsViewModel();
-            test.GetFeed();
         }
 
         private void ExitButton_Click(object sender, RoutedEventArgs e)
@@ -52,6 +51,11 @@ namespace Chern_App
                 sideBarRotateTransform.Angle = 0;
                 SideBarElement.UseFullName = false;
             }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            PageFrame.Content = PageController.GetPageObject<NewsPage>();
         }
     }
 }
