@@ -14,6 +14,8 @@ namespace Chern_App.News.ViewModels
     {
         private readonly string rssChannelUrl = "https://chor.gov.ua/nasha-diyalnist/novini?format=feed/*";
 
+        public rss rss;
+
         public bool GetFeed()
         {
             try
@@ -21,21 +23,10 @@ namespace Chern_App.News.ViewModels
                 WebClient webClient = new WebClient();
                 webClient.Headers.Add("user-agent", "MyRSSReader/1.0");
                 using (XmlReader reader = XmlReader.Create(webClient.OpenRead(rssChannelUrl)))
-                {
-                
+                {            
                         var serializer = new XmlSerializer(typeof(Models.rss));
-                        var rss = new rss();
+                        rss = new rss();
                         rss = (rss)serializer.Deserialize(reader);
-                        /*var rssChannel = new RSSChannel();
-                        rssChannel.title = feed.Title.Text;
-                        rssChannel.description = feed.Description.Text;
-                        rssChannel.News = new List<Models.News>();
-                        foreach(var item2 in feed.Items)
-                        {
-                            rssChannel.News.Add(new Models.News() { title = item2.Title.Text});
-                        }*/
-
-
                 }
                 return true;
             }
