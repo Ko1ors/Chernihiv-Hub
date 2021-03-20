@@ -25,6 +25,18 @@ namespace Chern_App
         public MainWindow()
         {
             InitializeComponent();
+            ModuleManager.AddButtonRequested += ModuleManager_AddButtonRequested;
+            ModuleManager.ShowPageRequested += ModuleManager_ShowPageRequested;
+        }
+
+        private void ModuleManager_ShowPageRequested(Page page)
+        {
+            PageFrame.Content = page;
+        }
+
+        private void ModuleManager_AddButtonRequested(Button button)
+        {
+            sideBarPanel.Children.Add(button);
         }
 
         private void ExitButton_Click(object sender, RoutedEventArgs e)

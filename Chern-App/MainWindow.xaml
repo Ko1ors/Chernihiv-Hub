@@ -107,9 +107,11 @@
                                     </shell:Button.LayoutTransform>
                                 </Button>
                                 <Rectangle Height="2" Fill="#FF17385D" />
-                                <Button Style="{StaticResource SideBarButtonStyle}" DataContext="{StaticResource newsElement}" Content="{Binding CurrentName}" Click="Button_Click_1"/>
-                                <Button Style="{StaticResource SideBarButtonStyle}" DataContext="{StaticResource pricesElement}" Content="{Binding CurrentName}"/>
-                                <Button Style="{StaticResource SideBarButtonStyle}" DataContext="{StaticResource weatherElement}" Content="{Binding CurrentName}"/>
+                                <StackPanel x:Name="sideBarPanel">
+                                    <Button Style="{StaticResource SideBarButtonStyle}" DataContext="{StaticResource newsElement}" Content="{Binding CurrentName}" Click="Button_Click_1"/>
+                                    <Button Style="{StaticResource SideBarButtonStyle}" DataContext="{StaticResource pricesElement}" Content="{Binding CurrentName}"/>
+                                    <Button Style="{StaticResource SideBarButtonStyle}" DataContext="{StaticResource weatherElement}" Content="{Binding CurrentName}"/>
+                                </StackPanel>
                             </StackPanel>
                         </Grid>
                     </Border>

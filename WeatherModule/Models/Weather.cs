@@ -11,7 +11,7 @@ namespace Chern_App
     {
         public static object ConsoleManager { get; private set; }
 
-        static void Main(string[] args)
+        static void Main1(string[] args)
         {
             string url = "http://api.openweathermap.org/data/2.5/weather?q=Chernihiv&units=metric&appid";
 
