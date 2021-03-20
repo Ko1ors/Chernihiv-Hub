@@ -8,6 +8,7 @@
              d:DesignHeight="150" d:DesignWidth="150">
     <UserControl.Resources>
         <local:WeatherIconConverter x:Key="converter"/>
+        <local:DayOfWeekConverter x:Key="dayConverter"/>
     </UserControl.Resources>
     <Grid >
         <Border Grid.Row="1" Grid.Column="1" Padding="5" BorderThickness="1" Margin="5" Background="#344048" CornerRadius="15" >
@@ -17,7 +18,7 @@
                     <RowDefinition Height="5*"/>
                 </Grid.RowDefinitions>
                 <Image Source="{Binding Icon, Converter={StaticResource converter}, FallbackValue=https://openweathermap.org/img/wn/01d@4x.png}"/>
-                <TextBlock Text="{Binding DayOfWeek, FallbackValue=Monday}" Margin="0,0,0,5" FontSize="15" FontFamily="Arial Black" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="White"/>
+                <TextBlock Text="{Binding DayOfWeek, FallbackValue=Monday, Converter={StaticResource dayConverter}}" Margin="0,0,0,5" FontSize="15" FontFamily="Arial Black" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="White"/>
                 <StackPanel HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Bottom">
                     <TextBlock DockPanel.Dock="Top" Text="{Binding Temp, StringFormat={}{0}°C, FallbackValue=10°C}" FontSize="15" FontFamily="Arial Black" HorizontalAlignment="Center" Foreground="White"/>
                     <TextBlock HorizontalAlignment="Center" Text="{Binding NightTemp, StringFormat={}{0}°C, FallbackValue=5°C}" Margin="0,0,0,5" FontSize="15" FontFamily="Arial Black" Foreground="LightGray"/>
