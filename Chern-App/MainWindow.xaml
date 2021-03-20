@@ -52,7 +52,6 @@
 
         <local:SideBarElement x:Key="newsElement" ShortName="📰" FullName="📰 NEWS "/>
         <local:SideBarElement x:Key="pricesElement" ShortName="₴" FullName="₴ PRICES "/>
-        <local:SideBarElement x:Key="weatherElement" ShortName="☁" FullName="☁ WEATHER "/>
 
     </Window.Resources>
     <Border BorderThickness="0">
@@ -106,12 +105,12 @@
                                         </shell:TransformGroup>
                                     </shell:Button.LayoutTransform>
                                 </Button>
+
                                 <Rectangle DockPanel.Dock="Top" Height="2" Fill="#FF17385D" />
                                 <ScrollViewer VerticalScrollBarVisibility="Auto">
                                     <DockPanel LastChildFill="False">
                                         <Button DockPanel.Dock="Top" Style="{StaticResource SideBarButtonStyle}" DataContext="{StaticResource newsElement}" Content="{Binding CurrentName}" Click="Button_Click_1"/>
                                         <Button DockPanel.Dock="Top" Style="{StaticResource SideBarButtonStyle}" DataContext="{StaticResource pricesElement}" Content="{Binding CurrentName}"/>
-                                        <Button DockPanel.Dock="Top" Style="{StaticResource SideBarButtonStyle}" DataContext="{StaticResource weatherElement}" Content="{Binding CurrentName}"/>
                                     </DockPanel>
                                 </ScrollViewer>
                             </DockPanel>
