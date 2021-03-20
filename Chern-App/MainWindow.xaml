@@ -5,6 +5,7 @@
         xmlns:shell="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Chern_App"
+        xmlns:res="clr-namespace:Chern_App.Properties"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <shell:WindowChrome.WindowChrome>
@@ -51,8 +52,8 @@
                 </Setter>
             </Style>
 
-        <local:SideBarElement x:Key="newsElement" ShortName="📰" FullName="📰 NEWS "/>
-        <local:SideBarElement x:Key="pricesElement" ShortName="₴" FullName="₴ PRICES "/>
+        <local:SideBarElement x:Key="newsElement" ShortName="📰" FullName="{x:Static res:Resources.NewsSideBarName}"/>
+        <local:SideBarElement x:Key="pricesElement" ShortName="₴" FullName="{x:Static res:Resources.PriceSideBarName}"/>
 
     </Window.Resources>
     <Border BorderThickness="0">
