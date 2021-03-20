@@ -117,8 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ChernihivNews" xml:space="preserve">
+    <value>CHERNIHIV NEWS</value>
+  </data>
+  <data name="Hackaton" xml:space="preserve">
+    <value>HACKATON 2021</value>
+  </data>
   <data name="NewsSideBarName" xml:space="preserve">
     <value>📰 NEWS </value>
+  </data>
+  <data name="NewsSource" xml:space="preserve">
+    <value>Source</value>
   </data>
   <data name="PriceSideBarName" xml:space="preserve">
     <value>₴ PRICES </value>

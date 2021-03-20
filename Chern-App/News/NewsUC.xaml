@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Chern_App.News"
+             xmlns:res="clr-namespace:Chern_App.Properties"
              mc:Ignorable="d"
              x:Name="uc"
              d:DesignHeight="120" d:DesignWidth="300">
@@ -20,7 +21,9 @@
                 <TextBlock MaxWidth="250"  Text="{Binding Path=newsModel.Description, ElementName=uc, FallbackValue=Description}" Margin="0,5,0,0" TextTrimming="CharacterEllipsis" TextWrapping="Wrap" MaxHeight="80" FontFamily="Arial Black" FontSize="11"/>
                 <DockPanel Margin="0,5,0,0">
                     <TextBlock Margin="0,0,5,0">
-                        <Hyperlink NavigateUri="{Binding Path=newsModel.Link, ElementName=uc}" FontFamily="Arial Black" FontSize="11">Ресурс</Hyperlink>
+                        <Hyperlink NavigateUri="{Binding Path=newsModel.Link, ElementName=uc}" FontFamily="Arial Black" FontSize="11">
+                            <!--<TextBlock Text="{x:Static res:Resources.NewsSource}"/>-->
+                        </Hyperlink>
                     </TextBlock>
                     <TextBlock HorizontalAlignment="Right" Text="{Binding Path=newsModel.Date, ElementName=uc, FallbackValue=01.01.2021}" TextWrapping="Wrap" FontFamily="Arial Black" FontSize="11"/>
                 </DockPanel>

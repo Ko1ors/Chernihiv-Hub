@@ -61,11 +61,38 @@ namespace Chern_App.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на CHERNIHIV NEWS.
+        /// </summary>
+        public static string ChernihivNews {
+            get {
+                return ResourceManager.GetString("ChernihivNews", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на HACKATON 2021.
+        /// </summary>
+        public static string Hackaton {
+            get {
+                return ResourceManager.GetString("Hackaton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на 📰 NEWS .
         /// </summary>
         public static string NewsSideBarName {
             get {
                 return ResourceManager.GetString("NewsSideBarName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Source.
+        /// </summary>
+        public static string NewsSource {
+            get {
+                return ResourceManager.GetString("NewsSource", resourceCulture);
             }
         }
         
