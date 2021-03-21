@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Chern_App.Properties {
+namespace WeatherModule.Properties {
     using System;
     
     
@@ -22,9 +22,7 @@ namespace Chern_App.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-
     public class Resources {
-
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -38,11 +36,10 @@ namespace Chern_App.Properties {
         ///   Возвращает кэшированный экземпляр ResourceManager, использованный этим классом.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Chern_App.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WeatherModule.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -54,9 +51,7 @@ namespace Chern_App.Properties {
         ///   обращений к ресурсу с помощью этого класса ресурса со строгой типизацией.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-
         public static global::System.Globalization.CultureInfo Culture {
-
             get {
                 return resourceCulture;
             }
@@ -66,69 +61,56 @@ namespace Chern_App.Properties {
         }
         
         /// <summary>
-        ///   Поиск локализованного ресурса типа System.IO.UnmanagedMemoryStream, аналогичного System.IO.MemoryStream.
+        ///   Ищет локализованную строку, похожую на WEATHER IN CHERNIHIV.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream sound {
+        public static string ChernihivWeather {
             get {
-                return ResourceManager.GetStream("sound", resourceCulture);
-            }
-        }
-        ///   Ищет локализованную строку, похожую на CHERNIHIV NEWS.
-        /// </summary>
-        public static string ChernihivNews {
-            get {
-                return ResourceManager.GetString("ChernihivNews", resourceCulture);
+                return ResourceManager.GetString("ChernihivWeather", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Поиск локализованного ресурса типа System.IO.UnmanagedMemoryStream, аналогичного System.IO.MemoryStream.
+        ///   Ищет локализованную строку, похожую на Feels like:.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream sound2 {
+        public static string FeelsLike {
             get {
-                return ResourceManager.GetStream("sound2", resourceCulture);
-            }
-        }
-        ///   Ищет локализованную строку, похожую на HACKATON 2021.
-        /// </summary>
-        public static string Hackaton {
-            get {
-                return ResourceManager.GetString("Hackaton", resourceCulture);
+                return ResourceManager.GetString("FeelsLike", resourceCulture);
             }
         }
         
         /// <summary>
-
-        ///   Поиск локализованного ресурса типа System.IO.UnmanagedMemoryStream, аналогичного System.IO.MemoryStream.
+        ///   Ищет локализованную строку, похожую на Humidity:.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream sound3 {
+        public static string Humidity {
             get {
-                return ResourceManager.GetStream("sound3", resourceCulture);
-            }
-        }
-        ///   Ищет локализованную строку, похожую на 📰 NEWS .
-        /// </summary>
-        public static string NewsSideBarName {
-            get {
-                return ResourceManager.GetString("NewsSideBarName", resourceCulture);
+                return ResourceManager.GetString("Humidity", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Source.
+        ///   Ищет локализованную строку, похожую на km/h.
         /// </summary>
-        public static string NewsSource {
+        public static string Speed {
             get {
-                return ResourceManager.GetString("NewsSource", resourceCulture);
+                return ResourceManager.GetString("Speed", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на ₴ PRICES .
+        ///   Ищет локализованную строку, похожую на ☁ WEATHER .
         /// </summary>
-        public static string PriceSideBarName {
+        public static string WeatherSideBarName {
             get {
-                return ResourceManager.GetString("PriceSideBarName", resourceCulture);
+                return ResourceManager.GetString("WeatherSideBarName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Wind:.
+        /// </summary>
+        public static string Wind {
+            get {
+                return ResourceManager.GetString("Wind", resourceCulture);
             }
         }
     }
