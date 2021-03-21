@@ -70,11 +70,65 @@ namespace Chern_App.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Empty input field!.
+        /// </summary>
+        public static string ErrorEmptyFieldMessage {
+            get {
+                return ResourceManager.GetString("ErrorEmptyFieldMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Error.
+        /// </summary>
+        public static string ErrorMessageHeader {
+            get {
+                return ResourceManager.GetString("ErrorMessageHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на HACKATON 2021.
         /// </summary>
         public static string Hackaton {
             get {
                 return ResourceManager.GetString("Hackaton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на PRODUCT SEARCH.
+        /// </summary>
+        public static string headerTextBlock {
+            get {
+                return ResourceManager.GetString("headerTextBlock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Source.
+        /// </summary>
+        public static string HyperLinkText {
+            get {
+                return ResourceManager.GetString("HyperLinkText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Information.
+        /// </summary>
+        public static string InformationMessageHeader {
+            get {
+                return ResourceManager.GetString("InformationMessageHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на No products found!.
+        /// </summary>
+        public static string InformationNoProductsFoundMessage {
+            get {
+                return ResourceManager.GetString("InformationNoProductsFoundMessage", resourceCulture);
             }
         }
         
@@ -114,6 +168,14 @@ namespace Chern_App.Properties {
             }
         }
         
+        ///   Ищет локализованную строку, похожую на  Price:  .
+        /// </summary>
+        public static string priceTextBlock {
+            get {
+                return ResourceManager.GetString("priceTextBlock", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Поиск локализованного ресурса типа System.IO.UnmanagedMemoryStream, аналогичного System.IO.MemoryStream.
         /// </summary>
@@ -123,12 +185,36 @@ namespace Chern_App.Properties {
             }
         }
         
+        ///   Ищет локализованную строку, похожую на Search.
+        /// </summary>
+        public static string searchButton {
+            get {
+                return ResourceManager.GetString("searchButton", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Поиск локализованного ресурса типа System.IO.UnmanagedMemoryStream, аналогичного System.IO.MemoryStream.
         /// </summary>
         public static System.IO.UnmanagedMemoryStream sound3 {
             get {
                 return ResourceManager.GetStream("sound3", resourceCulture);
+            }
+        }
+        ///   Ищет локализованную строку, похожую на Show All.
+        /// </summary>
+        public static string showAllButton {
+            get {
+                return ResourceManager.GetString("showAllButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на  UAH,  .
+        /// </summary>
+        public static string ValutaTextBlock {
+            get {
+                return ResourceManager.GetString("ValutaTextBlock", resourceCulture);
             }
         }
     }

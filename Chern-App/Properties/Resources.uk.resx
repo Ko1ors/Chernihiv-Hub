@@ -120,8 +120,26 @@
   <data name="ChernihivNews" xml:space="preserve">
     <value>НОВИНИ ЧЕРНІГОВА</value>
   </data>
+  <data name="ErrorEmptyFieldMessage" xml:space="preserve">
+    <value>Поле пошуку порожнє!</value>
+  </data>
+  <data name="ErrorMessageHeader" xml:space="preserve">
+    <value>Помилка</value>
+  </data>
   <data name="Hackaton" xml:space="preserve">
     <value>ХАКАТОН 2021</value>
+  </data>
+  <data name="headerTextBlock" xml:space="preserve">
+    <value>ПОШУК ТОВАРІВ</value>
+  </data>
+  <data name="HyperLinkText" xml:space="preserve">
+    <value>Ресурс</value>
+  </data>
+  <data name="InformationMessageHeader" xml:space="preserve">
+    <value>Інформація</value>
+  </data>
+  <data name="InformationNoProductsFoundMessage" xml:space="preserve">
+    <value>Жодних товарів не знайдено!</value>
   </data>
   <data name="NewsSideBarName" xml:space="preserve">
     <value>📰 НОВИНИ  </value>
@@ -131,5 +149,17 @@
   </data>
   <data name="PriceSideBarName" xml:space="preserve">
     <value>₴ ЦІНИ </value>
+  </data>
+  <data name="priceTextBlock" xml:space="preserve">
+    <value> Ціна:  </value>
+  </data>
+  <data name="searchButton" xml:space="preserve">
+    <value>Пошук</value>
+  </data>
+  <data name="showAllButton" xml:space="preserve">
+    <value>Всі товари</value>
+  </data>
+  <data name="ValutaTextBlock" xml:space="preserve">
+    <value> грн,  </value>
   </data>
 </root>
