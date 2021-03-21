@@ -9,12 +9,12 @@ namespace Chern_App.Prices.ViewModels
 {
     public class ViewVodelSQLite : IViewModel
     {
-        private readonly string cs = @"URI=file:Prices\db_product.db";
+        private readonly string dbPath = @"URI=file:Prices\db_product.db";
         private SQLiteConnection sqlite;
 
         public ViewVodelSQLite()
         {
-            sqlite = new SQLiteConnection(cs);
+            sqlite = new SQLiteConnection(dbPath);
         }
 
         public List<Product> getAllProducts()

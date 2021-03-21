@@ -5,9 +5,9 @@ using System.Text;
 
 namespace Chern_App.Prices.ViewModels
 {
-    interface IViewModel
+    public interface IViewModel
     {
-        List<Product> getAllProducts();
-        List<Product> getSearchedProducts(string searchedProductText);
+        public List<Product> getAllProducts();
+        public List<Product> getSearchedProducts(string searchedProductText);
     }
 }
