@@ -15,7 +15,6 @@ namespace Chern_App.Prices
         private List<Product> products;
         public PricesPage()
         {
-            System.Threading.Thread.CurrentThread.CurrentUICulture = System.Globalization.CultureInfo.GetCultureInfo("uk");
             InitializeComponent();
             viewModel = new ViewVodelSQLite();
         }
