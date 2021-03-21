@@ -26,7 +26,7 @@ namespace WeatherModule
                 btn.SetBinding(Button.ContentProperty, new Binding("CurrentName"));
 
                 weatherElement = new SideBarElement();
-                weatherElement.FullName = "☁ WEATHER ";
+                weatherElement.FullName = Properties.Resources.WeatherSideBarName;
                 weatherElement.ShortName = "☁";
                 btn.DataContext = weatherElement;
 

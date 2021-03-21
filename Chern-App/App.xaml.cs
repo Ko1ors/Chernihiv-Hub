@@ -1,6 +1,14 @@
 ﻿using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Unity;
+﻿using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
+
 using System.Windows;
 
 namespace Chern_App
@@ -24,5 +32,6 @@ namespace Chern_App
         {
             return new DirectoryModuleCatalog() { ModulePath = @".\Modules" };
         }
+       
     }
 }

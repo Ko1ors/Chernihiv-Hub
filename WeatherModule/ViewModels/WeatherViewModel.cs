@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Net;
 using WeatherModule.Models;
 
@@ -11,9 +12,20 @@ namespace Chern_App
     public class WeatherViewModel
     {
         private readonly string apiPath = "api.env";
-        private readonly string weatherUrl = "http://api.openweathermap.org/data/2.5/weather?q=Chernihiv&units=metric&appid=";
-        private readonly string weekWeatherUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=51&lon=32&exclude=current,minutely,hourly,alerts&units=metric&appid=";
+        private readonly string weatherUrl = "http://api.openweathermap.org/data/2.5/weather?q=Chernihiv&units=metric";
+        private readonly string weekWeatherUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=51&lon=32&exclude=current,minutely,hourly,alerts&units=metric";
         private string apiKey;
+
+        private static readonly List<string> SupportedLanguages = new List<string>()
+        {
+            "ua",
+            "uk",
+            "ru",
+            "cz",
+            "pl",
+            "kr",
+            "it"
+        };
 
         public bool GetApiKey()
         {
@@ -32,7 +44,11 @@ namespace Chern_App
                 return null;
             try
             {
-                var url = weatherUrl + apiKey;
+                string lang = CheckLanguageSupport();
+                var url = weatherUrl;
+                if (!string.IsNullOrEmpty(lang))
+                    url += "&lang=" + lang;
+                url += "&appid=" + apiKey;
 
                 HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create(url);
 
@@ -63,13 +79,23 @@ namespace Chern_App
             }
         }
 
+        private string CheckLanguageSupport()
+        {
+            var culture = System.Threading.Thread.CurrentThread.CurrentUICulture;
+            return SupportedLanguages.FirstOrDefault(e => culture.Name.Contains(e));
+        }
+
         public List<WeatherModel> GetWeekWeather()
         {
             if (string.IsNullOrEmpty(apiKey))
                 return null;
             try
             {
-                var url = weekWeatherUrl + apiKey;
+                string lang = CheckLanguageSupport();
+                var url = weekWeatherUrl;
+                if (!string.IsNullOrEmpty(lang))
+                    url += "&lang=" + lang;
+                url += "&appid=" + apiKey;
 
                 HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create(url);
 
@@ -84,7 +110,7 @@ namespace Chern_App
 
                 var weatherWeekResponse = JsonConvert.DeserializeObject<WeatherWeekResponse>(response);
                 var list = new List<WeatherModel>();
-                foreach(var daily in weatherWeekResponse.Daily)
+                foreach (var daily in weatherWeekResponse.Daily)
                 {
                     list.Add(new WeatherModel()
                     {

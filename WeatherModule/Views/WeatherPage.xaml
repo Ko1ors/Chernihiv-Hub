@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WeatherModule.Views"
+      xmlns:res="clr-namespace:WeatherModule.Properties"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Loaded="Page_Loaded"
@@ -23,7 +24,7 @@
             <ColumnDefinition Width="15*"/>
             <ColumnDefinition Width="10*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Text="ПОГОДА У ЧЕРНІГОВІ" Grid.ColumnSpan="3" FontFamily="Arial Black" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#344048"/>
+        <TextBlock Text="{x:Static res:Resources.ChernihivWeather}" Grid.ColumnSpan="3" FontFamily="Arial Black" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#344048"/>
         <Border Grid.Row="1" Grid.Column="1" Padding="5" BorderThickness="1" Margin="5" Background="#344048" CornerRadius="15" >
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -35,16 +36,17 @@
                 <StackPanel Grid.Column="1" VerticalAlignment="Center">
                     <TextBlock Text="{Binding Temp, StringFormat={}{0}°C, FallbackValue=10°C}" Margin="0,0,0,5" FontSize="15" FontFamily="Arial Black" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="White"/>
                     <TextBlock  FontSize="12" FontFamily="Arial Black" VerticalAlignment="Top" Margin="0,0,0,5" HorizontalAlignment="Left" Foreground="White">
-                        <Run Text="Відчувається як:"/>
+                        <Run Text="{x:Static res:Resources.FeelsLike}"/>
                         <Run Text="{Binding FeelsLike, StringFormat={}{0}°C, FallbackValue=7°C}"/>
                     </TextBlock>
                     <TextBlock  FontSize="12" FontFamily="Arial Black" Margin="0,0,0,5" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="White">
-                        <Run Text="Вологість:"/>
+                        <Run Text="{x:Static res:Resources.Humidity}"/>
                         <Run Text="{Binding Humidity, StringFormat={}{0}%, FallbackValue=35%}"/>
                     </TextBlock>
                     <TextBlock  FontSize="12" FontFamily="Arial Black" Margin="0,0,0,5" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="White">
-                        <Run Text="Вітер:"/>
-                        <Run Text="{Binding WindSpeed, StringFormat={}{0} км/год, FallbackValue=10 км/год}"/>
+                        <Run Text="{x:Static res:Resources.Wind}"/>
+                        <Run Text="{Binding WindSpeed, FallbackValue=10}"/>
+                        <Run Text="{x:Static res:Resources.Speed}"/>
                     </TextBlock>
                 </StackPanel>
                 
