@@ -22,7 +22,9 @@ namespace Chern_App.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+
     public class Resources {
+
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,6 +38,7 @@ namespace Chern_App.Properties {
         ///   Возвращает кэшированный экземпляр ResourceManager, использованный этим классом.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
@@ -51,7 +54,9 @@ namespace Chern_App.Properties {
         ///   обращений к ресурсу с помощью этого класса ресурса со строгой типизацией.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+
         public static global::System.Globalization.CultureInfo Culture {
+
             get {
                 return resourceCulture;
             }
@@ -61,6 +66,13 @@ namespace Chern_App.Properties {
         }
         
         /// <summary>
+        ///   Поиск локализованного ресурса типа System.IO.UnmanagedMemoryStream, аналогичного System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream sound {
+            get {
+                return ResourceManager.GetStream("sound", resourceCulture);
+            }
+        }
         ///   Ищет локализованную строку, похожую на CHERNIHIV NEWS.
         /// </summary>
         public static string ChernihivNews {
@@ -70,6 +82,13 @@ namespace Chern_App.Properties {
         }
         
         /// <summary>
+        ///   Поиск локализованного ресурса типа System.IO.UnmanagedMemoryStream, аналогичного System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream sound2 {
+            get {
+                return ResourceManager.GetStream("sound2", resourceCulture);
+            }
+        }
         ///   Ищет локализованную строку, похожую на HACKATON 2021.
         /// </summary>
         public static string Hackaton {
@@ -79,6 +98,14 @@ namespace Chern_App.Properties {
         }
         
         /// <summary>
+
+        ///   Поиск локализованного ресурса типа System.IO.UnmanagedMemoryStream, аналогичного System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream sound3 {
+            get {
+                return ResourceManager.GetStream("sound3", resourceCulture);
+            }
+        }
         ///   Ищет локализованную строку, похожую на 📰 NEWS .
         /// </summary>
         public static string NewsSideBarName {
