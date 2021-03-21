@@ -27,50 +27,45 @@
         </Style>
     </Page.Resources>
 
-    <StackPanel Background="{StaticResource BackgroundBrush}">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition Height="310"></RowDefinition>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="35"></ColumnDefinition>
-                <ColumnDefinition Width="1*"></ColumnDefinition>
-                <ColumnDefinition Width="Auto"></ColumnDefinition>
-                <ColumnDefinition Width="Auto"></ColumnDefinition>
-                <ColumnDefinition Width="35"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
 
-            <TextBlock Margin="0 10 0 0" Grid.Column="1" Grid.ColumnSpan="3" Text="{x:Static res:Resources.headerTextBlock}" FontFamily="Arial Black" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#344048"/>
-            <TextBox x:Name="searchProductName" Margin="10 0 0 0" Grid.Row="1" Grid.Column="1" Height="30" FontSize="18" FontFamily="Arial" Foreground="#344048" VerticalContentAlignment="Center" BorderBrush="{StaticResource WindowsBrush}" BorderThickness="2" ></TextBox>
-            <Button Grid.Row="1" Grid.Column="2" Style="{StaticResource ButtonStyle}" Click="ButtonSearch_Click"  Content="{x:Static res:Resources.searchButton}"></Button>
-            <Button Grid.Row="1" Grid.Column="3" Style="{StaticResource ButtonStyle}" Click="ButtonShowAll_Click" Content="{x:Static res:Resources.showAllButton}"></Button>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="35"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="35"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
 
-            <ListView Margin="10" Name="productListView" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" ScrollViewer.VerticalScrollBarVisibility="Auto" BorderBrush="{StaticResource WindowsBrush}" BorderThickness="2">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <WrapPanel>
-                            <!--<TextBlock Text="Name: " Style="{StaticResource OutPutFontStyle}" Foreground="{StaticResource WindowsBrush}"/>-->
-                            <TextBlock Text="{Binding Name}" FontWeight="Bold" Style="{StaticResource OutPutFontStyle}"/>
-                            <TextBlock Text=" (" Style="{StaticResource OutPutFontStyle}" Foreground="{StaticResource WindowsBrush}"/>
-                            <TextBlock>
-                                <Hyperlink NavigateUri="{Binding Link}" FontFamily="Arial Black" FontSize="14" RequestNavigate="Hyperlink_RequestNavigate"><TextBlock Text="{x:Static res:Resources.HyperLinkText}"></TextBlock></Hyperlink>
-                            </TextBlock>
-                            <TextBlock Text=")," Style="{StaticResource OutPutFontStyle}" Foreground="{StaticResource WindowsBrush}"/>
-                            <TextBlock Text="{x:Static res:Resources.priceTextBlock}" Style="{StaticResource OutPutFontStyle}"/>
-                            <TextBlock Text="{Binding Price}" FontWeight="Bold" Style="{StaticResource OutPutFontStyle}" Foreground="{StaticResource WindowsBrush}"/>
-                            <TextBlock Text="{x:Static res:Resources.ValutaTextBlock}" Style="{StaticResource OutPutFontStyle}"/>
-                            <TextBlock Text="{Binding ShopName}" FontWeight="Bold" Style="{StaticResource OutPutFontStyle}"/>
-                            <TextBlock Text=" (" Style="{StaticResource OutPutFontStyle}" Foreground="{StaticResource WindowsBrush}"/>
-                            <TextBlock>
-                                <Hyperlink NavigateUri="{Binding ShopLink}" FontFamily="Arial Black" FontSize="14" RequestNavigate="Hyperlink_RequestNavigate"><TextBlock Text="{x:Static res:Resources.HyperLinkText}"></TextBlock></Hyperlink>
-                            </TextBlock>
-                            <TextBlock Text=")" Style="{StaticResource OutPutFontStyle}" Foreground="{StaticResource WindowsBrush}"/>
-                        </WrapPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </Grid>
-    </StackPanel>
+        <TextBlock Margin="0 10 0 0" Grid.Column="1" Grid.ColumnSpan="3" Text="{x:Static res:Resources.headerTextBlock}" FontFamily="Arial Black" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#344048"/>
+        <TextBox x:Name="searchProductName" Margin="10 0 0 0" Grid.Row="1" Grid.Column="1" Height="30" FontSize="18" FontFamily="Arial" Foreground="#344048" VerticalContentAlignment="Center" BorderBrush="{StaticResource WindowsBrush}" BorderThickness="2" />
+        <Button Grid.Row="1" Grid.Column="2" Style="{StaticResource ButtonStyle}" Click="ButtonSearch_Click"  Content="{x:Static res:Resources.searchButton}"></Button>
+        <Button Grid.Row="1" Grid.Column="3" Style="{StaticResource ButtonStyle}" Click="ButtonShowAll_Click" Content="{x:Static res:Resources.showAllButton}"></Button>
+
+        <ListView x:Name="productListView" Grid.Row="3" Grid.ColumnSpan="5" Margin="5" BorderThickness="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="{x:Null}">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel />
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                <Border x:Name="RootBorder" Padding="10">
+                                    <ContentPresenter/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ListView.ItemContainerStyle>
+        </ListView>
+    </Grid>
 </Page>

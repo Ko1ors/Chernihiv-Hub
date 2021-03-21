@@ -1,18 +1,8 @@
 ﻿using Chern_App.Prices.Models;
 using Chern_App.Prices.ViewModels;
-using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Chern_App.Prices
 {
@@ -33,7 +23,12 @@ namespace Chern_App.Prices
         private void ButtonShowAll_Click(object sender, RoutedEventArgs e)
         {
             products = viewModel.getAllProducts();
-            if (products != null) productListView.ItemsSource = products;
+            productListView.Items.Clear();
+            if (products != null)
+                foreach (var product in products)
+                {
+                    productListView.Items.Add(new ProductUC(product));
+                }
         }
 
         private void ButtonSearch_Click(object sender, RoutedEventArgs e)
@@ -44,23 +39,12 @@ namespace Chern_App.Prices
                 return;
             }
             products = viewModel.getSearchedProducts(searchProductName.Text);
-            if (products != null) productListView.ItemsSource = products;
-        }
-
-        private void Hyperlink_RequestNavigate(object sender, System.Windows.Navigation.RequestNavigateEventArgs e)
-        {
-            try
-            {
-                Process.Start(new ProcessStartInfo("C://Program Files (x86)//Google//Chrome//Application//chrome.exe", e.Uri.AbsoluteUri));
-            }
-            catch
-            {
-                Process.Start(new ProcessStartInfo("C://Program Files//Google//Chrome//Application//chrome.exe", e.Uri.AbsoluteUri));
-            }
-            finally
-            {
-                e.Handled = true;
-            }
+            productListView.Items.Clear();
+            if (products != null)
+                foreach (var product in products)
+                {
+                    productListView.Items.Add(new ProductUC(product));
+                }
         }
     }
 }
