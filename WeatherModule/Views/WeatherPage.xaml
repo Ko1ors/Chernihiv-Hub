@@ -25,7 +25,7 @@
             <ColumnDefinition Width="10*"/>
         </Grid.ColumnDefinitions>
         <TextBlock Text="{x:Static res:Resources.ChernihivWeather}" Grid.ColumnSpan="3" FontFamily="Arial Black" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#344048"/>
-        <Border x:Name="currentWeather" Visibility="Hidden" Grid.Row="1" Grid.Column="1" Padding="5" BorderThickness="1" Margin="5" Background="#344048" CornerRadius="15" >
+        <Border x:Name="currentWeather" Visibility="Hidden" Grid.Row="1" Grid.Column="1" Padding="5" BorderThickness="1" Margin="5" Background="#1a508b" CornerRadius="15" >
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>

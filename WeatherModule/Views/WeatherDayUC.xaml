@@ -11,7 +11,7 @@
         <local:DayOfWeekConverter x:Key="dayConverter"/>
     </UserControl.Resources>
     <Grid >
-        <Border Grid.Row="1" Grid.Column="1" Padding="5" BorderThickness="1" Margin="5" Background="#344048" CornerRadius="15" >
+        <Border Grid.Row="1" Grid.Column="1" Padding="5" BorderThickness="1" Margin="5" Background="#1a508b" CornerRadius="15" >
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="10*"/>
