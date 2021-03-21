@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <OutputPath>C:\Users\Vlad\source\repos\Ko1ors\Chern-App\Chern-App\bin\Debug\netcoreapp3.1\Weather\</OutputPath>
+    <OutputPath>C:\Users\Ko1ors\source\repos\Ko1ors\Chern-App\Chern-App\bin\Debug\netcoreapp3.1\Weather\</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
