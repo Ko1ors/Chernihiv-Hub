@@ -1,4 +1,5 @@
 ﻿using Chern_App.News;
+using Chern_App.Prices;
 using System.Globalization;
 using System.IO;
 using System.Windows;
@@ -68,6 +69,11 @@ namespace Chern_App
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             PageFrame.Content = PageController.GetPageObject<NewsPage>();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            PageFrame.Content = PageController.GetPageObject<PricesPage>();
         }
     }
 }

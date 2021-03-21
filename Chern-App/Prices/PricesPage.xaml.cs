@@ -40,7 +40,7 @@ namespace Chern_App.Prices
         {
             if (searchProductName.Text.Trim().Length == 0)
             {
-                MessageBox.Show(Prices.Properties.Resources.ErrorEmptyFieldMessage, Prices.Properties.Resources.ErrorMessageHeader, MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(Properties.Resources.ErrorEmptyFieldMessage, Properties.Resources.ErrorMessageHeader, MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
             products = viewModel.getSearchedProducts(searchProductName.Text);

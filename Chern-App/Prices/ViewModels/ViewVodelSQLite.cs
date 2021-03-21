@@ -9,7 +9,7 @@ namespace Chern_App.Prices.ViewModels
 {
     public class ViewVodelSQLite : IViewModel
     {
-        private readonly string cs = @"URI=file:db_product.db";
+        private readonly string cs = @"URI=file:Prices\db_product.db";
         private SQLiteConnection sqlite;
 
         public ViewVodelSQLite()
@@ -45,14 +45,14 @@ namespace Chern_App.Prices.ViewModels
                 }
                 if (items.Count == 0)
                 {
-                    MessageBox.Show(Prices.Properties.Resources.InformationNoProductsFoundMessage, Prices.Properties.Resources.InformationMessageHeader, MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show(Properties.Resources.InformationNoProductsFoundMessage, Properties.Resources.InformationMessageHeader, MessageBoxButton.OK, MessageBoxImage.Information);
                     return null;
                 }
                 return items;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, Prices.Properties.Resources.ErrorMessageHeader, MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(ex.Message, Properties.Resources.ErrorMessageHeader, MessageBoxButton.OK, MessageBoxImage.Error);
                 return null;
             }
             finally

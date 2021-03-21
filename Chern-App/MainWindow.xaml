@@ -112,7 +112,7 @@
                                 <ScrollViewer VerticalScrollBarVisibility="Auto">
                                     <DockPanel x:Name="sideBarPanel" LastChildFill="False">
                                         <Button Style="{StaticResource SideBarButtonStyle}" DataContext="{StaticResource newsElement}" Content="{Binding CurrentName}" Click="Button_Click_1"/>
-                                        <Button Style="{StaticResource SideBarButtonStyle}" DataContext="{StaticResource pricesElement}" Content="{Binding CurrentName}"/>
+                                        <Button Style="{StaticResource SideBarButtonStyle}" DataContext="{StaticResource pricesElement}" Content="{Binding CurrentName}" Click="Button_Click_2"/>
                                     </DockPanel>
                                 </ScrollViewer>
                             </DockPanel>
