@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:Chern_App"
         xmlns:res="clr-namespace:Chern_App.Properties"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="950">
     <shell:WindowChrome.WindowChrome>
         <shell:WindowChrome 
             
@@ -110,7 +110,7 @@
 
                                 <Rectangle DockPanel.Dock="Top" Height="2" Fill="#FF17385D" />
                                 <ScrollViewer VerticalScrollBarVisibility="Auto">
-                                    <DockPanel LastChildFill="False">
+                                    <DockPanel x:Name="sideBarPanel" LastChildFill="False">
                                         <Button DockPanel.Dock="Top" Style="{StaticResource SideBarButtonStyle}" DataContext="{StaticResource newsElement}" Content="{Binding CurrentName}" Click="Button_Click_1" Mouse.MouseEnter="Button_MouseEnter"/>
                                         <Button DockPanel.Dock="Top" Style="{StaticResource SideBarButtonStyle}" DataContext="{StaticResource pricesElement}" Content="{Binding CurrentName}" Mouse.MouseEnter="Button_MouseEnter"/>
                                     </DockPanel>

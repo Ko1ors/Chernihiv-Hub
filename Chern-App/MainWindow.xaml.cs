@@ -48,6 +48,8 @@ namespace Chern_App
         private void ModuleManager_AddButtonRequested(Button button)
         {
             button.Style = FindResource("SideBarButtonStyle") as Style;
+            button.MouseEnter += Button_MouseEnter;
+            sideBarPanel.Children.Add(button);
         }
 
         private void ExitButton_Click(object sender, RoutedEventArgs e)
