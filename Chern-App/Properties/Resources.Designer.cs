@@ -160,6 +160,14 @@ namespace Chern_App.Properties {
         }
         
         /// <summary>
+        ///   Поиск локализованного ресурса типа System.IO.UnmanagedMemoryStream, аналогичного System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream sound {
+            get {
+                return ResourceManager.GetStream("sound", resourceCulture);
+            }
+        }
+        
         ///   Ищет локализованную строку, похожую на  Price:  .
         /// </summary>
         public static string priceTextBlock {
@@ -169,6 +177,14 @@ namespace Chern_App.Properties {
         }
         
         /// <summary>
+        ///   Поиск локализованного ресурса типа System.IO.UnmanagedMemoryStream, аналогичного System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream sound2 {
+            get {
+                return ResourceManager.GetStream("sound2", resourceCulture);
+            }
+        }
+        
         ///   Ищет локализованную строку, похожую на Search.
         /// </summary>
         public static string searchButton {
@@ -178,6 +194,13 @@ namespace Chern_App.Properties {
         }
         
         /// <summary>
+        ///   Поиск локализованного ресурса типа System.IO.UnmanagedMemoryStream, аналогичного System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream sound3 {
+            get {
+                return ResourceManager.GetStream("sound3", resourceCulture);
+            }
+        }
         ///   Ищет локализованную строку, похожую на Show All.
         /// </summary>
         public static string showAllButton {
