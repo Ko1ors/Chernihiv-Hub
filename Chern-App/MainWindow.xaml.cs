@@ -2,6 +2,7 @@
 using System.Media;
 using System.Windows;
 using System.Windows.Input;
+using Chern_App.Prices;
 using System.Globalization;
 using System.IO;
 using System.Windows.Controls;
@@ -88,6 +89,11 @@ namespace Chern_App
         private void Button_MouseEnter(object sender, MouseEventArgs e)
         {
             player.Play();
+        }
+        
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            PageFrame.Content = PageController.GetPageObject<PricesPage>();
         }
     }
 }

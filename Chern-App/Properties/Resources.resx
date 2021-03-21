@@ -130,8 +130,26 @@
   <data name="ChernihivNews" xml:space="preserve">
     <value>CHERNIHIV NEWS</value>
   </data>
+  <data name="ErrorEmptyFieldMessage" xml:space="preserve">
+    <value>Empty input field!</value>
+  </data>
+  <data name="ErrorMessageHeader" xml:space="preserve">
+    <value>Error</value>
+  </data>
   <data name="Hackaton" xml:space="preserve">
     <value>HACKATON 2021</value>
+  </data>
+  <data name="headerTextBlock" xml:space="preserve">
+    <value>PRODUCT SEARCH</value>
+  </data>
+  <data name="HyperLinkText" xml:space="preserve">
+    <value>Source</value>
+  </data>
+  <data name="InformationMessageHeader" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="InformationNoProductsFoundMessage" xml:space="preserve">
+    <value>No products found!</value>
   </data>
   <data name="NewsSideBarName" xml:space="preserve">
     <value>📰 NEWS </value>
@@ -141,5 +159,17 @@
   </data>
   <data name="PriceSideBarName" xml:space="preserve">
     <value>₴ PRICES </value>
+  </data>
+  <data name="priceTextBlock" xml:space="preserve">
+    <value> Price:  </value>
+  </data>
+  <data name="searchButton" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="showAllButton" xml:space="preserve">
+    <value>Show All</value>
+  </data>
+  <data name="ValutaTextBlock" xml:space="preserve">
+    <value> UAH,  </value>
   </data>
 </root>
